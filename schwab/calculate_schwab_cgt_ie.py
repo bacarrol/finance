@@ -122,7 +122,7 @@ def get_ecb_fx_rate(date: datetime) -> float:
     Falls back to previous business days if the date is a weekend/holiday.
     """
     # Try the date and up to 5 previous days (for weekends/holidays)
-    for offset in range(0, 10):
+    for offset in range(0, 6):
         target_date = date - timedelta(days=offset)
         date_str = target_date.strftime("%Y-%m-%d")
         url = (
